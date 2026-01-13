@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Loan in 42 Seconds - Agentic AI Demo</title>
+    <title>Emergency Loan - Agentic AI Demo</title>
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Emergency Loan in 42 Seconds - Agentic AI Demo" />
+    <meta property="og:title" content="Emergency Loan - Agentic AI Demo" />
     <meta property="og:description" content="AI that reasons, decides, and acts." />
     <meta property="og:image" content="og.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Emergency Loan in 42 Seconds - Agentic AI Demo" />
+    <meta name="twitter:title" content="Emergency Loan - Agentic AI Demo" />
     <meta name="twitter:description" content="AI that reasons, decides, and acts." />
     <meta name="twitter:image" content="og.png" />
 
@@ -855,7 +855,7 @@
                 </div>
             </div>
 
-            <!-- Act 2: AI Analysis -->
+            <!-- Act 2: Data Gathering -->
             <div class="act" id="act-2">
                 <div class="split-screen">
                     <div class="member-view">
@@ -890,20 +890,14 @@
                         <div style="display: flex; gap: 8px; margin-bottom: 20px;">
                             <span class="tech-badge tech-ai">🤖 AGENTIC AI</span>
                         </div>
-                        <h3>Gathering Your Complete Financial Picture</h3>
+                        <h2 style="margin-bottom: 20px;">Gathering Financial Data</h2>
+                        <p class="text-normal" style="margin-bottom: 30px; opacity: 0.8;">The agent accesses Brent's complete financial picture across all connected accounts...</p>
                         <div id="act2-data-points"></div>
-                        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
-                            <div style="display: flex; gap: 8px; margin-bottom: 20px;">
-                                <span class="tech-badge tech-ai">🤖 AGENTIC AI</span>
-                            </div>
-                            <h3>Analysis & Reasoning</h3>
-                            <div id="act2-reasoning"></div>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Act 3: Options & Comparison -->
+            <!-- Act 3: AI Reasoning -->
             <div class="act" id="act-3">
                 <div class="split-screen">
                     <div class="member-view">
@@ -914,7 +908,49 @@
                                 <span>🔋 34%</span>
                             </div>
                             <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
-                            <div class="phone-content" id="act3-options"></div>
+                            <div class="phone-content">
+                                <div class="message-row user-message">
+                                    <div class="message-avatar user-avatar">B</div>
+                                    <div class="message-bubble message-user">My car just broke down and I need $1,200 for repairs by Monday morning to get to work. What can I do?</div>
+                                </div>
+                                <div class="message-row">
+                                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                                    <div class="message-bubble message-ai">Analyzing your situation...</div>
+                                </div>
+                                <div class="message-row">
+                                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                                    <div class="typing-indicator">
+                                        <div class="typing-dot"></div>
+                                        <div class="typing-dot"></div>
+                                        <div class="typing-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="behind-scenes">
+                        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                            <span class="tech-badge tech-ai">🤖 AGENTIC AI</span>
+                        </div>
+                        <h2 style="margin-bottom: 20px;">Agent Reasoning</h2>
+                        <p class="text-normal" style="margin-bottom: 30px; opacity: 0.8;">The agent analyzes the data and makes a credit decision...</p>
+                        <div id="act3-reasoning"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act 4: Options & Comparison -->
+            <div class="act" id="act-4">
+                <div class="split-screen">
+                    <div class="member-view">
+                        <div class="phone-frame">
+                            <div class="phone-status-bar">
+                                <span>Verizon</span>
+                                <span>◆◆◆◆</span>
+                                <span>🔋 34%</span>
+                            </div>
+                            <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
+                            <div class="phone-content" id="act4-options"></div>
                         </div>
                     </div>
                     <div class="behind-scenes">
@@ -967,8 +1003,8 @@
                 </div>
             </div>
 
-            <!-- Act 4: Decision & Confirmation -->
-            <div class="act" id="act-4">
+            <!-- Act 5: Decision & Confirmation -->
+            <div class="act" id="act-5">
                 <div class="split-screen">
                     <div class="member-view">
                         <div class="phone-frame">
@@ -978,7 +1014,7 @@
                                 <span>🔋 34%</span>
                             </div>
                             <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
-                            <div class="phone-content" id="act4-content" style="padding: 0;"></div>
+                            <div class="phone-content" id="act5-content" style="padding: 0;"></div>
                         </div>
                     </div>
                     <div class="behind-scenes">
@@ -994,14 +1030,14 @@
                                 <span class="tech-badge tech-ai">🧠 Decides</span>
                                 <span class="tech-badge tech-ai">⚡ Acts</span>
                             </div>
-                            <p class="text-normal" style="margin: 0;">This is agentic AI — not just responding, but autonomously executing multi-step workflows</p>
+                            <p class="text-normal" style="margin: 0;">Agentic AI: autonomously executing multi-step workflows</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Act 5: Funding & Magic Moment -->
-            <div class="act" id="act-5">
+            <!-- Act 6: Funding & Magic Moment -->
+            <div class="act" id="act-6">
                 <div class="split-screen">
                     <div class="member-view">
                         <div class="phone-frame">
@@ -1011,22 +1047,22 @@
                                 <span>🔋 34%</span>
                             </div>
                             <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
-                            <div class="phone-content" id="act5-funding"></div>
+                            <div class="phone-content" id="act6-funding"></div>
                         </div>
                     </div>
                     <div class="behind-scenes">
                         <h2>The Magic Moment</h2>
-                        <div class="timer-display" id="act5-timer">Processing...</div>
+                        <div class="timer-display" id="act6-timer">Processing...</div>
                         <div style="margin-top: 30px;">
                             <h3 style="margin-bottom: 20px;">What Just Happened</h3>
-                            <div id="act5-summary"></div>
+                            <div id="act6-summary"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Act 6: Strategic Summary -->
-            <div class="act" id="act-6">
+            <!-- Act 7: Strategic Summary -->
+            <div class="act" id="act-7">
                 <div class="full-screen left-aligned">
                     <div style="width: 100%; max-width: 1200px;">
                         <h1 style="margin-bottom: 40px;">The Complete Picture</h1>
@@ -1084,7 +1120,7 @@
                                 <li>Large banks are building this now</li>
                                 <li>Your members expect this now</li>
                             </ul>
-                            <p class="text-large" style="margin-top: 30px;">Agentic AI isn't about productivity tools. It's about AI that reasons, decides, and acts — serving members when they need it most.</p>
+                            <p class="text-large" style="margin-top: 30px;">Agentic AI reasons, decides, and acts — serving members when they need it most.</p>
                         </div>
                     </div>
                 </div>
@@ -1111,11 +1147,12 @@
         const CONFIG = {
             acts: [
                 { id: 'act-1', name: 'The Crisis', duration: 5 },
-                { id: 'act-2', name: 'AI Analysis', duration: 10 },
-                { id: 'act-3', name: 'Options', duration: 8 },
-                { id: 'act-4', name: 'Decision', duration: 5 },
-                { id: 'act-5', name: 'Magic Moment', duration: 12 },
-                { id: 'act-6', name: 'Strategic Summary', duration: 30 }
+                { id: 'act-2', name: 'Data Gathering', duration: 6 },
+                { id: 'act-3', name: 'AI Reasoning', duration: 8 },
+                { id: 'act-4', name: 'Options', duration: 8 },
+                { id: 'act-5', name: 'Decision', duration: 5 },
+                { id: 'act-6', name: 'Magic Moment', duration: 12 },
+                { id: 'act-7', name: 'Strategic Summary', duration: 30 }
             ]
         };
 
@@ -1193,25 +1230,28 @@
                 { label: 'Parent Co-Signer Available', value: 'Yes', emoji: '✓', source: 'Account Link' }
             ];
 
-            dataContainer.innerHTML = '<div style="font-size: 14px; margin-bottom: 12px; color: #a78bfa;">Gathering your complete financial picture...</div>';
+            dataContainer.innerHTML = '';
             dataPoints.forEach((point, index) => {
                 const element = document.createElement('div');
                 element.className = `data-point stagger-${index + 1}`;
-                element.style.padding = '10px';
-                element.style.marginBottom = '6px';
+                element.style.padding = '12px';
+                element.style.marginBottom = '8px';
                 element.innerHTML = `
                     <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
-                        <div class="data-label" style="font-size: 16px; font-weight: 600;">${point.emoji} ${point.label}</div>
-                        <div style="font-size: 12px; opacity: 0.9; color: var(--stablecoin-gold); font-weight: 600;">${point.source}</div>
+                        <div class="data-label" style="font-size: 18px; font-weight: 600;">${point.emoji} ${point.label}</div>
+                        <div style="font-size: 14px; opacity: 0.9; color: var(--primary-start); font-weight: 600;">${point.source}</div>
                     </div>
-                    <div class="data-value" style="font-size: 24px; font-weight: 700; color: var(--trust-green); margin-top: 4px;">${point.value}</div>
+                    <div class="data-value" style="font-size: 28px; font-weight: 700; color: var(--trust-green); margin-top: 4px;">${point.value}</div>
                 `;
                 dataContainer.appendChild(element);
             });
 
-            await sleep(500);
+            await sleep(CONFIG.acts[1].duration * 1000);
+            pulseNextArrow();
+        }
 
-            const reasoningContainer = document.getElementById('act2-reasoning');
+        async function performAct3() {
+            const reasoningContainer = document.getElementById('act3-reasoning');
             const reasoning = [
                 {
                     title: '✓ Employment Stability',
@@ -1225,12 +1265,12 @@
                 },
                 {
                     title: '✓ Cash Flow Management',
-                    text: 'Monthly income of $1,200 with ~$400 surplus after expenses. The $210/month loan payment represents 52% of his monthly buffer — manageable for 6 months.',
+                    text: 'Monthly income of $1,200 with ~$400 surplus after expenses. The $205/month loan payment represents 51% of his monthly buffer — manageable for 6 months.',
                     icon: '💰'
                 },
                 {
                     title: '✓ Current Situation',
-                    text: 'One-time emergency with clear resolution. Not a recurring issue. Emergency repairs protect his ability to work and earn.',
+                    text: 'One-time emergency with clear resolution. Emergency repairs protect his ability to work and earn.',
                     icon: '🚗'
                 },
                 {
@@ -1240,27 +1280,27 @@
                 }
             ];
 
-            reasoningContainer.innerHTML = '<div style="font-size: 15px; margin-bottom: 14px; color: #a78bfa;">My analysis: 16-year-old Brent is a strong candidate. All signals point to approval.</div>';
+            reasoningContainer.innerHTML = '';
             reasoning.forEach((item, index) => {
                 const element = document.createElement('div');
-                element.className = `data-point stagger-${index + 6}`;
+                element.className = `data-point stagger-${index + 1}`;
                 const bgColor = item.icon === '🟢' ? 'rgba(46, 204, 113, 0.2)' : 'rgba(52, 152, 219, 0.2)';
                 element.style.background = bgColor;
-                element.style.padding = '12px';
-                element.style.marginBottom = '8px';
+                element.style.padding = '16px';
+                element.style.marginBottom = '12px';
                 element.innerHTML = `
-                    <div class="data-label" style="font-size: 15px; font-weight: 600;">${item.icon} ${item.title}</div>
-                    <div style="font-size: 16px; margin-top: 6px; line-height: 1.5; color: #e0d4ff;">${item.text}</div>
+                    <div class="data-label" style="font-size: 18px; font-weight: 600;">${item.icon} ${item.title}</div>
+                    <div style="font-size: 18px; margin-top: 8px; line-height: 1.5; color: #e0d4ff;">${item.text}</div>
                 `;
                 reasoningContainer.appendChild(element);
             });
 
-            await sleep(CONFIG.acts[1].duration * 1000);
+            await sleep(CONFIG.acts[2].duration * 1000);
             pulseNextArrow();
         }
 
-        async function performAct3() {
-            const optionsContainer = document.getElementById('act3-options');
+        async function performAct4() {
+            const optionsContainer = document.getElementById('act4-options');
             optionsContainer.innerHTML = `
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
@@ -1292,8 +1332,8 @@
             pulseNextArrow();
         }
 
-        async function performAct4() {
-            const contentContainer = document.getElementById('act4-content');
+        async function performAct5() {
+            const contentContainer = document.getElementById('act5-content');
             contentContainer.innerHTML = `
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
@@ -1322,9 +1362,9 @@
             pulseNextArrow();
         }
 
-        async function performAct5() {
-            const fundingContainer = document.getElementById('act5-funding');
-            const timerDisplay = document.getElementById('act5-timer');
+        async function performAct6() {
+            const fundingContainer = document.getElementById('act6-funding');
+            const timerDisplay = document.getElementById('act6-timer');
 
             fundingContainer.innerHTML = `
                 <div class="message-row">
@@ -1415,7 +1455,7 @@
             `;
             timerDisplay.innerHTML = '<span style="color: var(--trust-green);">✓ Complete in under 3 minutes</span>';
 
-            const summaryContainer = document.getElementById('act5-summary');
+            const summaryContainer = document.getElementById('act6-summary');
             summaryContainer.innerHTML = `
                 <div style="display: flex; flex-direction: column; gap: 16px;">
                     <div style="padding: 16px; background: rgba(155, 89, 182, 0.1); border-left: 4px solid var(--ai-purple); border-radius: 4px;">
@@ -1437,8 +1477,8 @@
             pulseNextArrow();
         }
 
-        async function performAct6() {
-            await sleep(CONFIG.acts[5].duration * 1000);
+        async function performAct7() {
+            await sleep(CONFIG.acts[6].duration * 1000);
         }
 
         // Helper function to pulse the next arrow to signal user to advance
@@ -1472,6 +1512,7 @@
                 case 3: await performAct4(); break;
                 case 4: await performAct5(); break;
                 case 5: await performAct6(); break;
+                case 6: await performAct7(); break;
             }
         }
 

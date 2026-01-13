@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Loan in 42 Seconds - Agentic AI Demo</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Emergency Loan in 42 Seconds - Agentic AI Demo" />
+    <meta property="og:description" content="AI that reasons, decides, and acts." />
+    <meta property="og:image" content="og.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Emergency Loan in 42 Seconds - Agentic AI Demo" />
+    <meta name="twitter:description" content="AI that reasons, decides, and acts." />
+    <meta name="twitter:image" content="og.png" />
+
+    <!-- Google Fonts - Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           RESET & GLOBALS
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-deepspace);
+            color: var(--text-primary);
+            overflow: hidden;
+        }
+
+        :root {
+            /* ============================================
+               WEB3 / CRYPTO COLOR PALETTE
+               Modern, Sleek, High-Tech Aesthetic
+               ============================================ */
+
+            /* Primary - Neon Cyan/Teal */
+            --primary-start: #06B6D4;
+            --primary-end: #14B8A6;
+            --primary-glow: rgba(6, 182, 212, 0.5);
+
+            /* Secondary - Electric Blue */
+            --secondary-start: #3B82F6;
+            --secondary-end: #2563EB;
+            --secondary-glow: rgba(59, 130, 246, 0.5);
+
+            /* Tertiary - Bright Cyan */
+            --tertiary-start: #22D3EE;
+            --tertiary-end: #67E8F9;
+            --tertiary-glow: rgba(34, 211, 238, 0.5);
+
+            /* Accent - Emerald Green */
+            --accent-start: #10B981;
+            --accent-end: #34D399;
+            --accent-glow: rgba(16, 185, 129, 0.5);
+
+            /* Backgrounds - Deep Space Theme */
+            --bg-deepspace: #020617;
+            --bg-surface-dark: #0F172A;
+            --bg-surface-mid: #1E293B;
+            --bg-surface-light: #334155;
+
+            /* Text Colors */
+            --text-primary: #FFFFFF;
+            --text-secondary: #E0D4FF;
+            --text-muted: #A78BFA;
+
+            /* Semantic Colors */
+            --success-start: #10B981;
+            --success-end: #34D399;
+            --success-glow: rgba(16, 185, 129, 0.5);
+
+            --warning-start: #F59E0B;
+            --warning-end: #FBBF24;
+            --warning-glow: rgba(245, 158, 11, 0.5);
+
+            --error-start: #EF4444;
+            --error-end: #F87171;
+            --error-glow: rgba(239, 68, 68, 0.5);
+
+            /* Technology Colors */
+            --ai-purple-start: #A855F7;
+            --ai-purple-end: #C084FC;
+
+            --data-blue-start: #3B82F6;
+            --data-blue-end: #60A5FA;
+
+            --stablecoin-gold-start: #FBBF24;
+            --stablecoin-gold-end: #FCD34D;
+
+            /* Legacy compatibility */
+            --cu-blue: #60A5FA;
+            --ai-purple: #C084FC;
+            --data-blue: #60A5FA;
+            --stablecoin-gold: #FCD34D;
+            --trust-green: #34D399;
+            --alert-amber: #FBBF24;
+            --urgent-red: #F87171;
+
+            /* Animation Speed */
+            --anim-speed: 1;
+
+            /* Modern Shape System - Sharp & Sleek */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 10px;
+            --radius-xl: 12px;
+        }
+
+        /* ============================================
+           TYPOGRAPHY - WEB3 OPTIMIZED
+           Scaled for projection while fitting all content
+           Modern, tight spacing for sleek appearance
+           ============================================ */
+
+        body {
+            font-size: 22px;
+            line-height: 1.5;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Display Scale - For Major Titles */
+        h1 {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.3em;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Headline Scale - For Section Headings */
+        h2 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.4em;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+            letter-spacing: -0.01em;
+        }
+
+        /* Body Scale - For Content */
+        .text-large {
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+
+        .text-normal {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0;
+        }
+
+        .text-small {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+        }
+
+        /* Data/Numeric Display */
+        .text-data {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: 'Roboto Mono', 'Courier New', monospace;
+            letter-spacing: 0.02em;
+            font-feature-settings: 'tnum' 1;  /* Tabular numbers */
+        }
+
+        /* ============================================
+           WEB3 BUTTONS
+           ============================================ */
+
+        .web3-btn {
+            position: relative;
+            padding: 12px 32px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+
+        .web3-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: var(--radius-md);
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .web3-btn-primary {
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: white;
+            box-shadow: 0 4px 16px var(--primary-glow);
+        }
+
+        .web3-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px var(--primary-glow);
+        }
+
+        .web3-btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px var(--primary-glow);
+        }
+
+        .web3-btn-secondary {
+            background: var(--bg-surface-mid);
+            color: var(--text-primary);
+            border: 2px solid var(--text-tertiary);
+        }
+
+        .web3-btn-secondary:hover {
+            background: var(--bg-surface-light);
+            border-color: var(--primary-start);
+            color: var(--primary-start);
+            box-shadow: 0 4px 16px rgba(6, 182, 212, 0.2);
+        }
+
+        .web3-btn-secondary:active {
+            background: var(--bg-surface-dark);
+        }
+
+        #demo-container { width: 100vw; height: 100vh; display: flex; flex-direction: column; }
+
+        /* ============================================
+           STAGE & LAYOUT
+           ============================================ */
+
+        #stage {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                var(--bg-deepspace) 0%,
+                var(--bg-surface-dark) 50%,
+                var(--bg-deepspace) 100%);
+            animation: backgroundFlow 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundFlow {
+            0%, 100% {
+                background: linear-gradient(135deg,
+                    var(--bg-deepspace) 0%,
+                    var(--bg-surface-dark) 50%,
+                    var(--bg-deepspace) 100%);
+            }
+            50% {
+                background: linear-gradient(135deg,
+                    var(--bg-surface-dark) 0%,
+                    var(--bg-surface-mid) 50%,
+                    var(--bg-deepspace) 100%);
+            }
+        }
+
+        .act {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .act.active { opacity: 1; pointer-events: auto; }
+        .act-transition-enter { animation: fadeIn 0.6s ease-out forwards !important; }
+        .act-transition-exit { animation: fadeOut 0.4s ease-in forwards !important; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+        .split-screen {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            gap: 3vw;
+            padding: 3vw;
+            align-items: center;
+        }
+
+        .member-view {
+            flex: 0 0 38%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .behind-scenes {
+            flex: 0 0 59%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Glassmorphism */
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 2vw;
+            padding-top: 3vw;
+            overflow-y: auto;
+            /* Neon glow */
+            box-shadow:
+                0 0 40px rgba(6, 182, 212, 0.15),
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-frame {
+            background: linear-gradient(135deg, #020617, #0F172A);
+            border: 3px solid rgba(6, 182, 212, 0.4);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 360px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow:
+                0 0 60px rgba(6, 182, 212, 0.3),
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(6, 182, 212, 0.2);
+            position: relative;
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 32px;
+            background: #000;
+            border-radius: 0 0 35px 35px;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .phone-status-bar { background: #000; color: #fff; padding: 8px 16px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 30px; border-bottom: 1px solid #333; }
+        .phone-app-header { background: var(--cu-blue); color: white; padding: 16px; display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; }
+        .phone-app-header::before { content: '←'; font-size: 24px; opacity: 0.7; margin-right: 4px; }
+        .phone-app-logo { height: 20px; width: auto; display: inline-block; vertical-align: middle; margin-top: -4px; }
+        .phone-content {
+            flex: 1;
+            overflow-y: auto;
+            background: #f5f5f5;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Message Container with Avatar */
+        .message-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            animation: messageFadeIn 0.4s ease-out forwards;
+            opacity: 0;
+        }
+
+        .message-row.user-message {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .message-avatar.ai-avatar {
+            background: linear-gradient(135deg, #06B6D4, #14B8A6);
+            color: white;
+        }
+
+        .message-avatar.user-avatar {
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+            color: white;
+        }
+
+        .message-bubble {
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.4;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+
+        @keyframes messageFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .message-user {
+            background: #3B82F6;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-ai {
+            background: white;
+            color: #1a1a1a;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-indicator { align-self: flex-start; background: #e0e0e0; color: #999; padding: 12px 16px; border-radius: 10px; display: flex; gap: 4px; align-items: center; font-size: 14px; }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.7; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        /* ============================================
+           CONTENT ELEMENTS - Material Design
+           ============================================ */
+
+        /* Technology Badges */
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .tech-ai {
+            background: rgba(206, 147, 216, 0.15);
+            color: var(--ai-purple);
+            border: 2px solid var(--ai-purple);
+        }
+
+        .tech-banking {
+            background: rgba(144, 202, 249, 0.15);
+            color: var(--data-blue);
+            border: 2px solid var(--data-blue);
+        }
+
+        .tech-stablecoin {
+            background: rgba(255, 213, 79, 0.15);
+            color: var(--stablecoin-gold);
+            border: 2px solid var(--stablecoin-gold);
+        }
+
+        /* Data Points for Information Display */
+        .data-point {
+            padding: 24px;
+            border-left: 4px solid var(--secondary-start);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            margin-bottom: 20px;
+            animation: slideInLeft 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+            opacity: 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .data-point.stagger-1 { animation-delay: 0.1s; }
+        .data-point.stagger-2 { animation-delay: 0.3s; }
+        .data-point.stagger-3 { animation-delay: 0.5s; }
+        .data-point.stagger-4 { animation-delay: 0.7s; }
+        .data-point.stagger-5 { animation-delay: 0.9s; }
+
+        .data-label {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .data-value {
+            font-size: 40px;
+            font-weight: 700;
+            margin-top: 10px;
+            color: var(--trust-green);
+        }
+
+        /* Timer Display - Projection Optimized */
+        .timer-display {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--tertiary-start), var(--tertiary-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 24px 32px;
+            text-align: center;
+            border: 2px solid var(--tertiary-start);
+            border-radius: var(--radius-lg);
+            margin: 24px 0;
+            background-color: rgba(6, 182, 212, 0.1);
+            /* Neon glow */
+            box-shadow:
+                0 0 30px var(--tertiary-glow),
+                0 4px 16px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            letter-spacing: 0.05em;
+        }
+
+        .full-screen { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; width: 100%; height: 100%; padding: 4vw; text-align: center; overflow-y: auto; }
+        .full-screen.left-aligned { align-items: flex-start; text-align: left; }
+
+        /* ============================================
+           SIMPLE NAVIGATION CONTROLS
+           ============================================ */
+
+        /* Navigation Arrows - Floating at Bottom */
+        .nav-arrow {
+            position: fixed;
+            bottom: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: rgba(6, 182, 212, 0.9);
+            cursor: pointer;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow:
+                0 0 20px rgba(6, 182, 212, 0.2),
+                0 4px 16px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            user-select: none;
+        }
+
+        .nav-arrow:hover {
+            background: rgba(6, 182, 212, 0.2);
+            border-color: rgba(6, 182, 212, 0.6);
+            color: rgba(6, 182, 212, 1);
+            transform: scale(1.1);
+            box-shadow:
+                0 0 30px rgba(6, 182, 212, 0.4),
+                0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-arrow:active {
+            transform: scale(0.95);
+        }
+
+        .nav-arrow.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-left {
+            left: 32px;
+        }
+
+        .nav-right {
+            right: 32px;
+        }
+
+        /* Navigation Arrow Pulse - Initial Discovery */
+        .nav-arrow-pulse {
+            animation: arrowPulseGlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes arrowPulseGlow {
+            0%, 100% {
+                box-shadow:
+                    0 0 20px rgba(6, 182, 212, 0.2),
+                    0 4px 16px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow:
+                    0 0 40px rgba(6, 182, 212, 0.6),
+                    0 0 60px rgba(6, 182, 212, 0.4),
+                    0 4px 16px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        /* Restart Button - Top Left */
+        .nav-restart {
+            position: fixed;
+            top: 32px;
+            left: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.85), rgba(20, 184, 166, 0.85));
+            border: 2px solid rgba(6, 182, 212, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow:
+                0 0 25px rgba(6, 182, 212, 0.5),
+                0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            user-select: none;
+        }
+
+        .nav-restart:hover {
+            transform: rotate(180deg) scale(1.1);
+            background: linear-gradient(135deg, rgba(6, 182, 212, 1), rgba(20, 184, 166, 1));
+            box-shadow:
+                0 0 35px rgba(6, 182, 212, 0.7),
+                0 6px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-restart:active {
+            transform: rotate(180deg) scale(0.95);
+        }
+
+        /* Act Indicator Dots - Bottom Center */
+        #actIndicator {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .act-indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .act-indicator-dot.active {
+            background: rgba(6, 182, 212, 0.8);
+            border-color: rgba(6, 182, 212, 0.9);
+            box-shadow:
+                0 0 15px rgba(6, 182, 212, 0.5),
+                0 2px 8px rgba(0, 0, 0, 0.3);
+            transform: scale(1.3);
+        }
+
+        /* Comparison Layout */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 32px 0;
+        }
+
+        .comparison-section {
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .comparison-section.traditional {
+            border-left-color: var(--alert-amber);
+            background: rgba(251, 140, 0, 0.08);
+        }
+
+        .comparison-section.modern {
+            border-left-color: var(--trust-green);
+            background: rgba(129, 199, 132, 0.08);
+        }
+
+        .comparison-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0;
+        }
+
+        .comparison-item {
+            font-size: 22px;
+            margin: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .comparison-section.traditional .comparison-item::before {
+            content: '✗';
+            color: var(--alert-amber);
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        .comparison-section.modern .comparison-item::before {
+            content: '✓';
+            color: var(--trust-green);
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        /* ============================================
+           SCROLLBAR - Web3 Styling
+           ============================================ */
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-surface-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-surface-light);
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--bg-surface-dark);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+    </style>
+</head>
+<body>
+    <div id="demo-container">
+        <div id="stage">
+            <!-- Act 1: The Crisis -->
+            <div class="act" id="act-1">
+                <div class="split-screen">
+                    <div class="member-view">
+                        <div class="phone-frame">
+                            <div class="phone-status-bar">
+                                <span>Verizon</span>
+                                <span>◆◆◆◆</span>
+                                <span>🔋 34%</span>
+                            </div>
+                            <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
+                            <div class="phone-content" id="act1-messages">
+                                <div class="message-row">
+                                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                                    <div class="message-bubble message-ai">Hey Brent! How can I help you today?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="behind-scenes">
+                        <h2>The Crisis</h2>
+                        <div class="text-large" style="color: var(--urgent-red); margin: 20px 0;">10:47 PM Saturday</div>
+                        <div style="display: inline-block; background: rgba(230, 126, 34, 0.2); border-left: 4px solid var(--alert-amber); padding: 12px 16px; border-radius: 6px; margin: 15px 0; font-size: 20px; color: white;">
+                            ⏰ Brent has 31 hours to solve this
+                        </div>
+                        <h3 style="margin: 20px 0;">Traditional Banking is Closed</h3>
+                        <p class="text-normal" style="margin: 20px 0;">Brent needs $1,200 for emergency car repairs by Monday morning to get to work.</p>
+                        <div style="display: flex; gap: 16px; margin-top: 30px;">
+                            <div>
+                                <p class="text-small" style="opacity: 0.85;">Account Balance</p>
+                                <p class="text-data" style="color: var(--alert-amber);">$340</p>
+                            </div>
+                            <div>
+                                <p class="text-small" style="opacity: 0.85;">Amount Needed</p>
+                                <p class="text-data" style="color: var(--urgent-red);">$1,200</p>
+                            </div>
+                            <div>
+                                <p class="text-small" style="opacity: 0.85;">Time Available</p>
+                                <p class="text-data" style="color: var(--alert-amber);">~31 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act 2: AI Analysis -->
+            <div class="act" id="act-2">
+                <div class="split-screen">
+                    <div class="member-view">
+                        <div class="phone-frame">
+                            <div class="phone-status-bar">
+                                <span>Verizon</span>
+                                <span>◆◆◆◆</span>
+                                <span>🔋 34%</span>
+                            </div>
+                            <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
+                            <div class="phone-content" id="act2-messages">
+                                <div class="message-row user-message">
+                                    <div class="message-avatar user-avatar">B</div>
+                                    <div class="message-bubble message-user">My car just broke down and I need $1,200 for repairs by Monday morning to get to work. What can I do?</div>
+                                </div>
+                                <div class="message-row">
+                                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                                    <div class="message-bubble message-ai">I can help you, Brent. Give me a moment to look at your complete financial situation and find the best solution.</div>
+                                </div>
+                                <div class="message-row">
+                                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                                    <div class="typing-indicator">
+                                        <div class="typing-dot"></div>
+                                        <div class="typing-dot"></div>
+                                        <div class="typing-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="behind-scenes">
+                        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                            <span class="tech-badge tech-ai">🤖 AGENTIC AI</span>
+                        </div>
+                        <h3>Gathering Your Complete Financial Picture</h3>
+                        <div id="act2-data-points"></div>
+                        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                                <span class="tech-badge tech-ai">🤖 AGENTIC AI</span>
+                            </div>
+                            <h3>Analysis & Reasoning</h3>
+                            <div id="act2-reasoning"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act 3: Options & Comparison -->
+            <div class="act" id="act-3">
+                <div class="split-screen">
+                    <div class="member-view">
+                        <div class="phone-frame">
+                            <div class="phone-status-bar">
+                                <span>Verizon</span>
+                                <span>◆◆◆◆</span>
+                                <span>🔋 34%</span>
+                            </div>
+                            <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
+                            <div class="phone-content" id="act3-options"></div>
+                        </div>
+                    </div>
+                    <div class="behind-scenes">
+                        <div style="display: flex; gap: 8px; margin-bottom: 30px;">
+                            <span class="tech-badge tech-ai" style="font-size: 18px; padding: 12px 20px;">
+                                🤖 AGENTIC AI DECISION ENGINE
+                            </span>
+                        </div>
+                        <h2 style="margin-bottom: 30px; color: var(--trust-green);">The Speed & Availability Advantage</h2>
+
+                        <!-- Timeline Comparison -->
+                        <div style="margin-bottom: 40px; padding: 25px; background: rgba(0,0,0,0.3); border-radius: 12px; border: 2px solid var(--alert-amber);">
+                            <div style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--alert-amber);">❌ Traditional Process</div>
+                            <div style="display: flex; align-items: center; margin: 20px 0; gap: 15px;">
+                                <div style="font-size: 32px; font-weight: 700; color: var(--urgent-red); min-width: 180px;">CLOSED</div>
+                                <div style="flex: 1; height: 4px; background: linear-gradient(90deg, transparent, var(--alert-amber), transparent); border-radius: 2px;"></div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                                <div style="font-size: 20px; color: white;">Branch closed (Saturday night)</div>
+                                <div style="font-size: 20px; color: white;">Earliest: Monday 9 AM</div>
+                                <div style="font-size: 20px; color: white;">1-2 day approval process</div>
+                                <div style="font-size: 20px; color: white;">Brent misses work Monday</div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; font-size: 32px; font-weight: 700; color: var(--trust-green); margin: 20px 0;">VS</div>
+
+                        <!-- Agentic AI Timeline -->
+                        <div style="margin-bottom: 30px; padding: 25px; background: rgba(46, 204, 113, 0.1); border-radius: 12px; border: 2px solid var(--trust-green);">
+                            <div style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--trust-green);">✓ Agentic AI Processing</div>
+                            <div style="display: flex; align-items: center; margin: 20px 0; gap: 15px;">
+                                <div style="font-size: 36px; font-weight: 900; color: var(--trust-green); min-width: 120px;">42 SEC</div>
+                                <div style="flex: 1; height: 6px; background: linear-gradient(90deg, var(--trust-green), var(--ai-purple)); border-radius: 3px;"></div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                                <div style="font-size: 20px; color: white;">Instant credit decision</div>
+                                <div style="font-size: 20px; color: white;">24/7/365 availability</div>
+                                <div style="font-size: 20px; color: white;">Automated underwriting</div>
+                                <div style="font-size: 20px; color: white;">Brent makes it to work</div>
+                            </div>
+                        </div>
+
+                        <!-- The Real Advantage -->
+                        <div style="padding: 20px; background: rgba(46, 204, 113, 0.25); border: 2px solid var(--trust-green); border-radius: 12px; text-align: center;">
+                            <div style="font-size: 18px; color: white; opacity: 0.95; margin-bottom: 8px;">THE CRITICAL DIFFERENCE</div>
+                            <div style="font-size: 32px; font-weight: 900; color: var(--trust-green); line-height: 1.2;">AI That Reasons, Decides, Acts<br/>When Members Need It</div>
+                            <div style="font-size: 16px; color: white; margin-top: 12px;">Saturday night. Holidays. Weekends. The agent analyzes, approves, and funds.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act 4: Decision & Confirmation -->
+            <div class="act" id="act-4">
+                <div class="split-screen">
+                    <div class="member-view">
+                        <div class="phone-frame">
+                            <div class="phone-status-bar">
+                                <span>Verizon</span>
+                                <span>◆◆◆◆</span>
+                                <span>🔋 34%</span>
+                            </div>
+                            <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
+                            <div class="phone-content" id="act4-content" style="padding: 0;"></div>
+                        </div>
+                    </div>
+                    <div class="behind-scenes">
+                        <h2>Member Selection</h2>
+                        <p class="text-normal" style="margin: 20px 0;">Brent chooses Option 2: Instant Emergency Loan</p>
+                        <div style="margin-top: 32px; padding: 24px; background: rgba(46, 204, 113, 0.1); border: 2px solid var(--trust-green); border-radius: 8px;">
+                            <div style="font-size: 24px; font-weight: 600; margin-bottom: 24px;">What the Agent is Doing:</div>
+                            <div style="margin-bottom: 24px; padding: 16px; background: rgba(155, 89, 182, 0.2); border: 1px solid var(--ai-purple); border-radius: 6px; font-size: 16px; line-height: 1.6;">
+                                🤖 <strong>The agent analyzed his complete financial picture, made a credit decision, and is now executing the loan.</strong> No human intervention required.
+                            </div>
+                            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center;">
+                                <span class="tech-badge tech-ai">🤖 Reasons</span>
+                                <span class="tech-badge tech-ai">🧠 Decides</span>
+                                <span class="tech-badge tech-ai">⚡ Acts</span>
+                            </div>
+                            <p class="text-normal" style="margin: 0;">This is agentic AI — not just responding, but autonomously executing multi-step workflows</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act 5: Funding & Magic Moment -->
+            <div class="act" id="act-5">
+                <div class="split-screen">
+                    <div class="member-view">
+                        <div class="phone-frame">
+                            <div class="phone-status-bar">
+                                <span>Verizon</span>
+                                <span>◆◆◆◆</span>
+                                <span>🔋 34%</span>
+                            </div>
+                            <div class="phone-app-header"><img src="acu_logo.png" alt="ACU Logo" class="phone-app-logo"> Agentic CU</div>
+                            <div class="phone-content" id="act5-funding"></div>
+                        </div>
+                    </div>
+                    <div class="behind-scenes">
+                        <h2>The Magic Moment</h2>
+                        <div class="timer-display" id="act5-timer">Processing...</div>
+                        <div style="margin-top: 30px;">
+                            <h3 style="margin-bottom: 20px;">What Just Happened</h3>
+                            <div id="act5-summary"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Act 6: Strategic Summary -->
+            <div class="act" id="act-6">
+                <div class="full-screen left-aligned">
+                    <div style="width: 100%; max-width: 1200px;">
+                        <h1 style="margin-bottom: 40px;">The Complete Picture</h1>
+                        <h2 style="color: var(--ai-purple); margin-bottom: 30px;">What Agentic AI Just Did</h2>
+
+                        <!-- What Traditional Would Have Done -->
+                        <div style="margin-bottom: 40px; padding: 25px; background: rgba(230, 126, 34, 0.3); border: 2px solid var(--alert-amber); border-radius: 12px;">
+                            <h3 style="color: var(--alert-amber); margin-bottom: 20px;">Without Agentic AI ❌</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 24px; line-height: 2;">
+                                <div>• Wait until Monday to apply</div>
+                                <div>• 1-2 day approval process</div>
+                                <div>• No service on weekends</div>
+                                <div>• Misses work = lost income</div>
+                                <div>• Forced to payday lender</div>
+                                <div>• Leaves CU for fintech</div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin: 60px 0;">
+                            <div style="padding: 30px; background: rgba(155, 89, 182, 0.2); border-left: 4px solid var(--ai-purple); border-radius: 8px;">
+                                <h3 style="color: var(--ai-purple); margin-bottom: 20px; font-size: 32px;">🤖 Reasoned</h3>
+                                <ul style="font-size: 20px; line-height: 2; margin-left: 20px;">
+                                    <li>✓ Understood emergency</li>
+                                    <li>✓ Gathered financial data</li>
+                                    <li>✓ Assessed risk factors</li>
+                                    <li>✓ Verified employment</li>
+                                </ul>
+                            </div>
+
+                            <div style="padding: 30px; background: rgba(155, 89, 182, 0.2); border-left: 4px solid var(--ai-purple); border-radius: 8px;">
+                                <h3 style="color: var(--ai-purple); margin-bottom: 20px; font-size: 32px;">🧠 Decided</h3>
+                                <ul style="font-size: 20px; line-height: 2; margin-left: 20px;">
+                                    <li>✓ Made credit decision</li>
+                                    <li>✓ Calculated best terms</li>
+                                    <li>✓ Structured payment plan</li>
+                                    <li>✓ Approved the loan</li>
+                                </ul>
+                            </div>
+
+                            <div style="padding: 30px; background: rgba(155, 89, 182, 0.2); border-left: 4px solid var(--ai-purple); border-radius: 8px;">
+                                <h3 style="color: var(--ai-purple); margin-bottom: 20px; font-size: 32px;">⚡ Acted</h3>
+                                <ul style="font-size: 20px; line-height: 2; margin-left: 20px;">
+                                    <li>✓ Generated documents</li>
+                                    <li>✓ Processed signature</li>
+                                    <li>✓ Transferred funds</li>
+                                    <li>✓ Completed in 42 sec</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 40px; padding: 30px; background: rgba(46, 204, 113, 0.2); border-left: 4px solid var(--trust-green); border-radius: 8px;">
+                            <h2 style="color: var(--trust-green); margin-bottom: 20px;">The Competitive Reality</h2>
+                            <ul style="font-size: 24px; line-height: 2;">
+                                <li>Fintech companies are building this now</li>
+                                <li>Large banks are building this now</li>
+                                <li>Your members expect this now</li>
+                            </ul>
+                            <p class="text-large" style="margin-top: 30px;">Agentic AI isn't about productivity tools. It's about AI that reasons, decides, and acts — serving members when they need it most.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simple Navigation Controls -->
+        <div id="navPrevious" class="nav-arrow nav-left" title="Previous Act">
+            ◀
+        </div>
+
+        <div id="navNext" class="nav-arrow nav-right" title="Next Act">
+            ▶
+        </div>
+
+        <div id="navRestart" class="nav-restart" title="Restart">
+            ⟲
+        </div>
+
+        <div id="actIndicator"></div>
+    </div>
+
+    <script>
+        const CONFIG = {
+            acts: [
+                { id: 'act-1', name: 'The Crisis', duration: 5 },
+                { id: 'act-2', name: 'AI Analysis', duration: 10 },
+                { id: 'act-3', name: 'Options', duration: 8 },
+                { id: 'act-4', name: 'Decision', duration: 5 },
+                { id: 'act-5', name: 'Magic Moment', duration: 12 },
+                { id: 'act-6', name: 'Strategic Summary', duration: 30 }
+            ]
+        };
+
+        const state = {
+            currentAct: 0
+        };
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function showAct(actIndex) {
+            document.querySelectorAll('.act').forEach(act => {
+                act.classList.remove('active', 'act-transition-enter', 'act-transition-exit');
+            });
+
+            const actElement = document.getElementById(CONFIG.acts[actIndex].id);
+            if (actElement) {
+                actElement.classList.add('active', 'act-transition-enter');
+            }
+
+            state.currentAct = actIndex;
+        }
+
+        async function performAct1() {
+            await sleep(500);
+
+            const msgContainer = document.getElementById('act1-messages');
+            msgContainer.innerHTML = `
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai">Hey Brent! How can I help you today?</div>
+                </div>
+            `;
+            await sleep(1500);
+
+            const userMsgRow = document.createElement('div');
+            userMsgRow.className = 'message-row user-message fade-in';
+            userMsgRow.innerHTML = `
+                <div class="message-avatar user-avatar">B</div>
+                <div class="message-bubble message-user">My car broke down and I need $1,200 for repairs by Monday morning...</div>
+            `;
+            msgContainer.appendChild(userMsgRow);
+            await sleep(CONFIG.acts[0].duration * 1000 - 2000);
+            pulseNextArrow();
+        }
+
+        async function performAct2() {
+            const msgContainer = document.getElementById('act2-messages');
+            msgContainer.innerHTML = `
+                <div class="message-row user-message">
+                    <div class="message-avatar user-avatar">B</div>
+                    <div class="message-bubble message-user">My car just broke down and I need $1,200 for repairs by Monday morning to get to work. What can I do?</div>
+                </div>
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai">I can help you, Brent. Give me a moment to look at your complete financial situation and find the best solution.</div>
+                </div>
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            `;
+
+            const dataContainer = document.getElementById('act2-data-points');
+            const dataPoints = [
+                { label: 'Agentic CU Checking', value: '$340', emoji: '✓', source: 'Our CU' },
+                { label: 'Agentic CU Savings', value: '$1,800', emoji: '✓', source: 'Our CU' },
+                { label: 'Regions Bank Checking', value: '$215', emoji: '✓', source: 'External' },
+                { label: 'Capital One Credit Card', value: '$890 / $3,500', emoji: '✓', source: 'External' },
+                { label: 'Monthly Verified Income', value: '$4,500', emoji: '✓', source: 'Payroll' }
+            ];
+
+            dataContainer.innerHTML = '<div style="font-size: 14px; margin-bottom: 12px; color: #a78bfa;">Gathering your complete financial picture...</div>';
+            dataPoints.forEach((point, index) => {
+                const element = document.createElement('div');
+                element.className = `data-point stagger-${index + 1}`;
+                element.style.padding = '10px';
+                element.style.marginBottom = '6px';
+                element.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+                        <div class="data-label" style="font-size: 16px; font-weight: 600;">${point.emoji} ${point.label}</div>
+                        <div style="font-size: 12px; opacity: 0.9; color: var(--stablecoin-gold); font-weight: 600;">${point.source}</div>
+                    </div>
+                    <div class="data-value" style="font-size: 24px; font-weight: 700; color: var(--trust-green); margin-top: 4px;">${point.value}</div>
+                `;
+                dataContainer.appendChild(element);
+            });
+
+            await sleep(500);
+
+            const reasoningContainer = document.getElementById('act2-reasoning');
+            const reasoning = [
+                {
+                    title: '✓ Employment Stability',
+                    text: 'Brent has been at UMMC for 6 years. Stable healthcare employment with excellent income predictability.',
+                    icon: '🏥'
+                },
+                {
+                    title: '✓ Payment Behavior',
+                    text: 'Perfect payment history: 72 months of on-time payments. Zero missed or late payments. Demonstrates consistent financial responsibility.',
+                    icon: '✓'
+                },
+                {
+                    title: '✓ Cash Flow Management',
+                    text: 'Monthly income of $4,500 with ~$1,600 surplus after expenses. The $210/month loan payment represents only 13% of her monthly buffer.',
+                    icon: '💰'
+                },
+                {
+                    title: '✓ Current Situation',
+                    text: 'One-time emergency with clear resolution. Not a recurring issue. Emergency repairs protect her ability to work and earn.',
+                    icon: '🚗'
+                },
+                {
+                    title: '✓ Risk Assessment',
+                    text: 'Low risk profile. Strong income, proven payment discipline, adequate cash flow. This is a highly serviceable loan with minimal default risk.',
+                    icon: '🟢'
+                }
+            ];
+
+            reasoningContainer.innerHTML = '<div style="font-size: 15px; margin-bottom: 14px; color: #a78bfa;">My analysis: Brent is a strong candidate. All signals point to approval.</div>';
+            reasoning.forEach((item, index) => {
+                const element = document.createElement('div');
+                element.className = `data-point stagger-${index + 6}`;
+                const bgColor = item.icon === '🟢' ? 'rgba(46, 204, 113, 0.2)' : 'rgba(52, 152, 219, 0.2)';
+                element.style.background = bgColor;
+                element.style.padding = '12px';
+                element.style.marginBottom = '8px';
+                element.innerHTML = `
+                    <div class="data-label" style="font-size: 15px; font-weight: 600;">${item.icon} ${item.title}</div>
+                    <div style="font-size: 16px; margin-top: 6px; line-height: 1.5; color: #e0d4ff;">${item.text}</div>
+                `;
+                reasoningContainer.appendChild(element);
+            });
+
+            await sleep(CONFIG.acts[1].duration * 1000);
+            pulseNextArrow();
+        }
+
+        async function performAct3() {
+            const optionsContainer = document.getElementById('act3-options');
+            optionsContainer.innerHTML = `
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai" style="font-size: 18px;">I found three ways to help you:</div>
+                </div>
+
+                <div class="option-card" style="background: rgba(52, 152, 219, 0.15); border: 2px solid var(--data-blue); margin-top: 10px; padding: 12px; border-radius: 8px;">
+                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 1: Use Savings</div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Amount: <strong style="color: var(--trust-green); font-size: 18px;">$1,200</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Interest: <strong style="color: var(--trust-green); font-size: 18px;">$0</strong></div>
+                </div>
+
+                <div class="option-card" style="background: rgba(46, 204, 113, 0.15); border: 2px solid var(--trust-green); margin-top: 10px; padding: 12px; border-radius: 8px;">
+                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 2: Emergency Loan</div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">APR: <strong style="color: var(--trust-green); font-size: 18px;">6.9%</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Payment: <strong style="color: var(--trust-green); font-size: 18px;">$210/mo</strong></div>
+                </div>
+
+                <div class="option-card" style="background: rgba(155, 89, 182, 0.15); border: 2px solid var(--ai-purple); margin-top: 10px; padding: 12px; border-radius: 8px;">
+                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 3: Combination</div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Savings: <strong style="color: var(--trust-green); font-size: 18px;">$800</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Loan: <strong style="color: var(--trust-green); font-size: 18px;">$400 @ 6.9%</strong></div>
+                </div>
+            `;
+
+            await sleep(CONFIG.acts[2].duration * 1000);
+            pulseNextArrow();
+        }
+
+        async function performAct4() {
+            const contentContainer = document.getElementById('act4-content');
+            contentContainer.innerHTML = `
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai">
+                        <div style="font-weight: 600; margin-bottom: 6px;">Option 2: Instant Emergency Loan</div>
+                        <div style="font-size: 14px; opacity: 0.9;">
+                            💰 Amount: $1,200<br/>
+                            📅 APR: 6.9%<br/>
+                            ⏱️ Term: 6 months<br/>
+                            ✓ Approved now
+                        </div>
+                    </div>
+                </div>
+            `;
+            await sleep(1000);
+
+            const confirmMsgRow = document.createElement('div');
+            confirmMsgRow.className = 'message-row user-message fade-in';
+            confirmMsgRow.innerHTML = `
+                <div class="message-avatar user-avatar">B</div>
+                <div class="message-bubble message-user">Yes, I want to move forward with this loan. ✓</div>
+            `;
+            contentContainer.appendChild(confirmMsgRow);
+
+            await sleep(CONFIG.acts[3].duration * 1000 - 1000);
+            pulseNextArrow();
+        }
+
+        async function performAct5() {
+            const fundingContainer = document.getElementById('act5-funding');
+            const timerDisplay = document.getElementById('act5-timer');
+
+            fundingContainer.innerHTML = `
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai">Processing your loan...</div>
+                </div>
+            `;
+            timerDisplay.textContent = 'Processing...';
+            await sleep(1000);
+
+            const msgRow1 = document.createElement('div');
+            msgRow1.className = 'message-row';
+            msgRow1.innerHTML = `
+                <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Approved</div>
+            `;
+            fundingContainer.appendChild(msgRow1);
+            timerDisplay.innerHTML = '<span style="color: var(--trust-green);">✓ Approved</span>';
+            await sleep(800);
+
+            const msgRow2 = document.createElement('div');
+            msgRow2.className = 'message-row';
+            msgRow2.innerHTML = `
+                <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Generating documents</div>
+            `;
+            fundingContainer.appendChild(msgRow2);
+            await sleep(600);
+
+            const msgRow3 = document.createElement('div');
+            msgRow3.className = 'message-row';
+            msgRow3.innerHTML = `
+                <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Transferring funds...</div>
+            `;
+            fundingContainer.appendChild(msgRow3);
+            timerDisplay.textContent = `Funding complete`;
+            await sleep(800);
+
+            fundingContainer.innerHTML = `
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Approved</div>
+                </div>
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Generating documents</div>
+                </div>
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Transferring funds</div>
+                </div>
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai" style="background: rgba(46, 204, 113, 0.25); border: 2px solid var(--trust-green); color: #1a1a1a; padding: 16px; font-size: 17px; font-weight: 600; line-height: 1.6;">
+                        💚 $1,200.00 deposited<br/>
+                        New balance: $1,540.00<br/>
+                        ⚡ Time: 42 seconds
+                    </div>
+                </div>
+                <div class="message-row user-message">
+                    <div class="message-avatar user-avatar">B</div>
+                    <div class="message-bubble message-user">Thank you so much! This just saved my week. 💙</div>
+                </div>
+            `;
+            timerDisplay.innerHTML = '<span style="color: var(--trust-green);">✓ Complete in 42 seconds</span>';
+
+            const summaryContainer = document.getElementById('act5-summary');
+            summaryContainer.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="padding: 16px; background: rgba(155, 89, 182, 0.1); border-left: 4px solid var(--ai-purple); border-radius: 4px;">
+                        <p class="text-small" style="opacity: 0.7; margin-bottom: 8px;">🤖 REASONED</p>
+                        <p class="text-data">Analyzed complete picture</p>
+                    </div>
+                    <div style="padding: 16px; background: rgba(155, 89, 182, 0.1); border-left: 4px solid var(--ai-purple); border-radius: 4px;">
+                        <p class="text-small" style="opacity: 0.7; margin-bottom: 8px;">🧠 DECIDED</p>
+                        <p class="text-data">Approved the loan</p>
+                    </div>
+                    <div style="padding: 16px; background: rgba(46, 204, 113, 0.1); border-left: 4px solid var(--trust-green); border-radius: 4px;">
+                        <p class="text-small" style="opacity: 0.7; margin-bottom: 8px;">⚡ ACTED</p>
+                        <p class="text-data">Funded in 42 seconds</p>
+                    </div>
+                </div>
+            `;
+
+            await sleep(CONFIG.acts[4].duration * 1000 - 4000);
+            pulseNextArrow();
+        }
+
+        async function performAct6() {
+            await sleep(CONFIG.acts[5].duration * 1000);
+        }
+
+        // Helper function to pulse the next arrow to signal user to advance
+        function pulseNextArrow() {
+            const nextArrow = document.getElementById('navNext');
+            if (nextArrow && !nextArrow.classList.contains('hidden')) {
+                nextArrow.classList.add('nav-arrow-pulse');
+                // Remove pulse after 8 seconds to avoid distraction
+                setTimeout(() => {
+                    nextArrow.classList.remove('nav-arrow-pulse');
+                }, 8000);
+            }
+        }
+
+        // Simple navigation functions
+        async function goToAct(actIndex) {
+            // Validate act index
+            if (actIndex < 0 || actIndex >= CONFIG.acts.length) {
+                return;
+            }
+
+            state.currentAct = actIndex;
+            showAct(actIndex);
+            updateNavigation();
+
+            // Auto-play the act animation
+            switch(actIndex) {
+                case 0: await performAct1(); break;
+                case 1: await performAct2(); break;
+                case 2: await performAct3(); break;
+                case 3: await performAct4(); break;
+                case 4: await performAct5(); break;
+                case 5: await performAct6(); break;
+            }
+        }
+
+        function nextAct() {
+            if (state.currentAct < CONFIG.acts.length - 1) {
+                goToAct(state.currentAct + 1);
+            }
+        }
+
+        function previousAct() {
+            if (state.currentAct > 0) {
+                goToAct(state.currentAct - 1);
+            }
+        }
+
+        function restart() {
+            goToAct(0);
+        }
+
+        function updateNavigation() {
+            // Update act indicator dots
+            const dots = document.querySelectorAll('.act-indicator-dot');
+            dots.forEach((dot, index) => {
+                if (index === state.currentAct) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            // Show/hide navigation arrows
+            const prevArrow = document.getElementById('navPrevious');
+            const nextArrow = document.getElementById('navNext');
+
+            if (state.currentAct === 0) {
+                prevArrow.classList.add('hidden');
+            } else {
+                prevArrow.classList.remove('hidden');
+            }
+
+            if (state.currentAct === CONFIG.acts.length - 1) {
+                nextArrow.classList.add('hidden');
+            } else {
+                nextArrow.classList.remove('hidden');
+            }
+        }
+
+        function initDots() {
+            const indicatorContainer = document.getElementById('actIndicator');
+            CONFIG.acts.forEach((act, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'act-indicator-dot';
+                indicatorContainer.appendChild(dot);
+            });
+        }
+
+        // Event listeners for navigation
+        document.getElementById('navPrevious').addEventListener('click', previousAct);
+        document.getElementById('navNext').addEventListener('click', nextAct);
+        document.getElementById('navRestart').addEventListener('click', restart);
+
+        function init() {
+            initDots();
+            showAct(0);
+            updateNavigation();
+
+            // Add pulsing glow to next arrow on first load to help discovery
+            const nextArrow = document.getElementById('navNext');
+            nextArrow.classList.add('nav-arrow-pulse');
+
+            // Remove pulse after 8 seconds to avoid distraction
+            setTimeout(() => {
+                nextArrow.classList.remove('nav-arrow-pulse');
+            }, 8000);
+        }
+
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>

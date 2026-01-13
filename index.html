@@ -946,7 +946,7 @@
                         <div style="margin-bottom: 30px; padding: 25px; background: rgba(46, 204, 113, 0.1); border-radius: 12px; border: 2px solid var(--trust-green);">
                             <div style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: var(--trust-green);">✓ Agentic AI Processing</div>
                             <div style="display: flex; align-items: center; margin: 20px 0; gap: 15px;">
-                                <div style="font-size: 36px; font-weight: 900; color: var(--trust-green); min-width: 120px;">42 SEC</div>
+                                <div style="font-size: 36px; font-weight: 900; color: var(--trust-green); min-width: 120px;">~3 MIN</div>
                                 <div style="flex: 1; height: 6px; background: linear-gradient(90deg, var(--trust-green), var(--ai-purple)); border-radius: 3px;"></div>
                             </div>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
@@ -1235,7 +1235,7 @@
                 },
                 {
                     title: '✓ Risk Assessment',
-                    text: 'Low risk profile. Strong income, proven payment discipline, adequate cash flow. This is a highly serviceable loan with minimal default risk.',
+                    text: 'Moderate individual risk (limited credit history), but parent co-signer on linked account provides strong guarantee. Combined household profile supports approval.',
                     icon: '🟢'
                 }
             ];
@@ -1268,21 +1268,23 @@
                 </div>
 
                 <div class="option-card" style="background: rgba(52, 152, 219, 0.15); border: 2px solid var(--data-blue); margin-top: 10px; padding: 12px; border-radius: 8px;">
-                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 1: Use Savings</div>
-                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Amount: <strong style="color: var(--trust-green); font-size: 18px;">$1,200</strong></div>
-                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Interest: <strong style="color: var(--trust-green); font-size: 18px;">$0</strong></div>
+                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 1: Savings + Parent Help</div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Your savings: <strong style="font-size: 18px;">$680</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Request from parents: <strong style="font-size: 18px;">$520</strong></div>
                 </div>
 
                 <div class="option-card" style="background: rgba(46, 204, 113, 0.15); border: 2px solid var(--trust-green); margin-top: 10px; padding: 12px; border-radius: 8px;">
                     <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 2: Emergency Loan</div>
-                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">APR: <strong style="color: var(--trust-green); font-size: 18px;">6.9%</strong></div>
-                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Payment: <strong style="color: var(--trust-green); font-size: 18px;">$210/mo</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Amount: <strong style="color: var(--trust-green); font-size: 18px;">$1,200 @ 6.9% APR</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Payment: <strong style="color: var(--trust-green); font-size: 18px;">$205/mo for 6 months</strong></div>
+                    <div style="font-size: 14px; margin: 4px 0; color: #666;">Requires parent co-signer (linked)</div>
                 </div>
 
                 <div class="option-card" style="background: rgba(155, 89, 182, 0.15); border: 2px solid var(--ai-purple); margin-top: 10px; padding: 12px; border-radius: 8px;">
-                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 3: Combination</div>
-                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Savings: <strong style="color: var(--trust-green); font-size: 18px;">$800</strong></div>
-                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Loan: <strong style="color: var(--trust-green); font-size: 18px;">$400 @ 6.9%</strong></div>
+                    <div style="font-weight: 700; margin-bottom: 8px; font-size: 20px; color: #1a1a1a;">Option 3: Smaller Loan</div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Your savings: <strong style="font-size: 18px;">$680</strong></div>
+                    <div style="font-size: 16px; margin: 4px 0; color: #2c2c2c;">Loan: <strong style="color: var(--trust-green); font-size: 18px;">$520 @ 6.9%</strong></div>
+                    <div style="font-size: 14px; margin: 4px 0; color: #666;">Requires parent co-signer (linked)</div>
                 </div>
             `;
 
@@ -1296,12 +1298,12 @@
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
                     <div class="message-bubble message-ai">
-                        <div style="font-weight: 600; margin-bottom: 6px;">Option 2: Instant Emergency Loan</div>
+                        <div style="font-weight: 600; margin-bottom: 6px;">Option 2: Emergency Loan</div>
                         <div style="font-size: 14px; opacity: 0.9;">
                             💰 Amount: $1,200<br/>
-                            📅 APR: 6.9%<br/>
+                            📅 APR: 6.9% ($205/mo)<br/>
                             ⏱️ Term: 6 months<br/>
-                            ✓ Approved now
+                            👨‍👩‍👦 Parent co-signer required
                         </div>
                     </div>
                 </div>
@@ -1312,7 +1314,7 @@
             confirmMsgRow.className = 'message-row user-message fade-in';
             confirmMsgRow.innerHTML = `
                 <div class="message-avatar user-avatar">B</div>
-                <div class="message-bubble message-user">Yes, I want to move forward with this loan. ✓</div>
+                <div class="message-bubble message-user">Yes, Option 2 please.</div>
             `;
             contentContainer.appendChild(confirmMsgRow);
 
@@ -1337,58 +1339,81 @@
             msgRow1.className = 'message-row';
             msgRow1.innerHTML = `
                 <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
-                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Approved</div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Credit approved</div>
             `;
             fundingContainer.appendChild(msgRow1);
             timerDisplay.innerHTML = '<span style="color: var(--trust-green);">✓ Approved</span>';
-            await sleep(800);
+            await sleep(600);
 
             const msgRow2 = document.createElement('div');
             msgRow2.className = 'message-row';
             msgRow2.innerHTML = `
                 <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
-                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Generating documents</div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Parent co-signer notified...</div>
             `;
             fundingContainer.appendChild(msgRow2);
+            await sleep(800);
+
+            const msgRow2b = document.createElement('div');
+            msgRow2b.className = 'message-row';
+            msgRow2b.innerHTML = `
+                <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Co-signer approved via app</div>
+            `;
+            fundingContainer.appendChild(msgRow2b);
             await sleep(600);
 
             const msgRow3 = document.createElement('div');
             msgRow3.className = 'message-row';
             msgRow3.innerHTML = `
                 <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
-                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Transferring funds...</div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Documents signed (both parties)</div>
             `;
             fundingContainer.appendChild(msgRow3);
+            await sleep(500);
+
+            const msgRow4 = document.createElement('div');
+            msgRow4.className = 'message-row';
+            msgRow4.innerHTML = `
+                <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Transferring funds...</div>
+            `;
+            fundingContainer.appendChild(msgRow4);
             timerDisplay.textContent = `Funding complete`;
-            await sleep(800);
+            await sleep(700);
 
             fundingContainer.innerHTML = `
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
-                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Approved</div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Credit approved</div>
                 </div>
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
-                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Generating documents</div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Co-signer approved via app</div>
                 </div>
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
-                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Transferring funds</div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Documents signed (both parties)</div>
+                </div>
+                <div class="message-row">
+                    <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
+                    <div class="message-bubble message-ai" style="color: var(--trust-green);">✓ Funds transferred</div>
                 </div>
                 <div class="message-row">
                     <div class="message-avatar ai-avatar"><img src="acu_logo.png" alt="Agentic CU" style="height: 75%; width: 75%; object-fit: contain;"></div>
                     <div class="message-bubble message-ai" style="background: rgba(46, 204, 113, 0.25); border: 2px solid var(--trust-green); color: #1a1a1a; padding: 16px; font-size: 17px; font-weight: 600; line-height: 1.6;">
                         💚 $1,200.00 deposited<br/>
                         New balance: $1,540.00<br/>
-                        ⚡ Time: 42 seconds
+                        📅 First payment: $205 on Feb 15<br/>
+                        ⚡ Total time: under 3 minutes
                     </div>
                 </div>
                 <div class="message-row user-message">
                     <div class="message-avatar user-avatar">B</div>
-                    <div class="message-bubble message-user">Thank you so much! This just saved my week. 💙</div>
+                    <div class="message-bubble message-user">Thank you! This saved my week. 💙</div>
                 </div>
             `;
-            timerDisplay.innerHTML = '<span style="color: var(--trust-green);">✓ Complete in 42 seconds</span>';
+            timerDisplay.innerHTML = '<span style="color: var(--trust-green);">✓ Complete in under 3 minutes</span>';
 
             const summaryContainer = document.getElementById('act5-summary');
             summaryContainer.innerHTML = `
@@ -1403,7 +1428,7 @@
                     </div>
                     <div style="padding: 16px; background: rgba(46, 204, 113, 0.1); border-left: 4px solid var(--trust-green); border-radius: 4px;">
                         <p class="text-small" style="opacity: 0.7; margin-bottom: 8px;">⚡ ACTED</p>
-                        <p class="text-data">Funded in 42 seconds</p>
+                        <p class="text-data">Funded in under 3 minutes</p>
                     </div>
                 </div>
             `;
